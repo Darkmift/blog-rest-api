@@ -2,12 +2,11 @@ const jwt = require('jsonwebtoken');
 
 // create a new token for the user by his _id 
 function getToken(_userId) {
-  const token = jwt.sign({ _id: _userId }, config.jwtSecret, { expiresIn: "60mins" });
+  const token = jwt.sign({ _id: _userId }, process.env.JWT_SECRET, { expiresIn: "60mins" });
   return token;
 };
 
 function validateToken(token) {
-  const token = req.header("x-auth-token");
   if (!token) {
     return [null, "You must have token"];
   }

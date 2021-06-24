@@ -1,6 +1,7 @@
 const { findAndValidateUser } = require('./user.service');
 const { comparePassword,
   generatePassword } = require('../../modules/bcrypt');
+const { getToken } = require('../../modules/jsonWebToken')
 
 
 async function login(req, res, next) {
@@ -21,3 +22,5 @@ async function login(req, res, next) {
     next(error);
   }
 }
+
+module.exports = { login }

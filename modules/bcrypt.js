@@ -9,7 +9,7 @@ async function comparePassword(inputPassword, hashedPassword) {
   }
 }
 
-function generatePassword(password) {
+async function generatePassword(password) {
   try {
     const result = await bcrypt.hash(user.password, 10);
     return [result, null]

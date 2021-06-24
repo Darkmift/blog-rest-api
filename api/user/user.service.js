@@ -4,8 +4,8 @@ const { comparePassword,
 
 async function findAndValidateUser(email, password) {
   try {
-    const [user, error] = await User.findOne({ email });
-    if (!user || error) {
+    const user = await User.findOne({ email });
+    if (!user) {
       return [null, 'User or password not found 1']
     }
 
@@ -17,6 +17,7 @@ async function findAndValidateUser(email, password) {
 
     return [user, null]
   } catch (error) {
+    console.log("🚀 ~ file: user.service.js ~ line 21 ~ findAndValidateUser ~ error", error)
     return [null, error]
   }
 }

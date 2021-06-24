@@ -10,8 +10,11 @@ if (process.env.NODE_ENV != 'production') {
 const express = require('express');
 const app = express();
 
-const mainRouter = require('./routes');
+const mongooseConnection = require('./modules/mongoose-connection');
+//trigger connection
+mongooseConnection;
 
+const mainRouter = require('./routes');
 app.use(express.json());
 
 app.use('/health', (req, res) => {
@@ -27,5 +30,5 @@ app.use((req, res) => {
 const PORT = process.env.PORT || 3030;
 app.listen(PORT, () => {
   console.log('Server listening on port: ' + PORT);
-  console.log('NODE_ENV' + process.env.NODE_ENV);
+  console.log('NODE_ENV: ' + process.env.NODE_ENV);
 });
