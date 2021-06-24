@@ -15,6 +15,8 @@ async function findAndValidateUser(email, password) {
       return [null, 'User or password not found 2']
     }
 
+    delete user.password
+
     return [user, null]
   } catch (error) {
     console.log("🚀 ~ file: user.service.js ~ line 21 ~ findAndValidateUser ~ error", error)

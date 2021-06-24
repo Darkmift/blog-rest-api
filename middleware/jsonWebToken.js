@@ -2,8 +2,7 @@ const jwt = require('jsonwebtoken');
 const { validateToken } = require('../modules/jsonWebToken');
 
 function authTokenMiddleware(req, res, next) {
-  const authToken = req.header("x-auth-token");
-
+  const authToken = req.headers.authorization.split(' ')[1];
   const [decodeToken, error] = validateToken(authToken)
 
   if (!decodeToken || error) {
