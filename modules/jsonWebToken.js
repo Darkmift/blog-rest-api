@@ -16,7 +16,7 @@ function validateToken(token) {
   }
   catch (err) {
     console.log(err);
-    return [null, error]
+    return [null, err]
   }
 };
 
