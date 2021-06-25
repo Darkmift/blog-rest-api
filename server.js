@@ -10,9 +10,8 @@ if (process.env.NODE_ENV != 'production') {
 const express = require('express');
 const app = express();
 
-const mongooseConnection = require('./modules/mongoose-connection');
-//trigger connection
-mongooseConnection;
+//connect to mongo
+require('./modules/mongoose-connection');
 
 const mainRouter = require('./routes');
 app.use(express.json());
