@@ -1,0 +1,24 @@
+{
+  "_id": { "$oid": "60d4b2c0e3fc9f2800180e34" },
+  "first_name": "admin",
+  "last_name": "admin",
+  "age": { "$numberInt": "45" },
+  "birth_date": { "$date": { "$numberLong": "1624552207000" } },
+  "email": "admin@sys.com",
+  "password": "$2b$10$QZDTHtUFNP2b9DaU8uan.eAG3sHq0ws43Ai2WHGfwTXAkmUg0pGYW",
+  "buisness": false
+}
+
+
+{
+  "_id": {
+      "$oid": "60d6f5aa0cdbc83c7455278a"
+  },
+  "first_name": "admin2",
+  "last_name": "admin2",
+  "age": { "$numberInt": "45" },
+  "birth_date": { "$date": { "$numberLong": "1624552207000" } },
+  "email": "admin2@sys.com",
+  "password": "$2b$10$QZDTHtUFNP2b9DaU8uan.eAG3sHq0ws43Ai2WHGfwTXAkmUg0pGYW",
+  "buisness": false
+}

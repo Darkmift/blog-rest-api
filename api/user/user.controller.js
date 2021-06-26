@@ -1,7 +1,7 @@
 const { findAndValidateUser } = require('./user.service');
 const { comparePassword,
   generatePassword } = require('../../modules/bcrypt');
-const { getToken } = require('../../modules/jsonWebToken')
+const { getToken, removeLoggedUser } = require('../../modules/jsonWebToken')
 
 
 async function login(req, res, next) {
@@ -23,4 +23,14 @@ async function login(req, res, next) {
   }
 }
 
-module.exports = { login }
+async function logout(req, res, next) {
+  try {
+    const userIdx = removeLoggedUser(req.tokenData._id)
+    console.log('hi?')
+    res.json({ userIdx });
+  } catch (error) {
+    next(error);
+  }
+}
+
+module.exports = { login, logout }

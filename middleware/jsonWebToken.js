@@ -6,7 +6,7 @@ function authTokenMiddleware(req, res, next) {
   const [decodeToken, error] = validateToken(authToken)
 
   if (!decodeToken || error) {
-    return res.status(401).json({ msg: "You must have token" });
+    return res.status(401).json({ msg: error });
   }
 
   req.tokenData = decodeToken;
